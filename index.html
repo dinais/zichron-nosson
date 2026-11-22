@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>זכרון נתן (ע״ר)</title>
+<meta name="description" content="עמותת זכרון נתן (ע״ר), מס׳ עמותה 580643492, ירושלים.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕯️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f7f4;
+    --ink: #1c2540;
+    --ink-soft: #4a5370;
+    --night: #141b33;
+    --flame: #d9a441;
+    --line: #d9dccf;
+    --serif: "Frank Ruhl Libre", "David Libre", "Times New Roman", serif;
+    --sans: "Heebo", "Arial", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #121830;
+      --ink: #eef0f6;
+      --ink-soft: #b4bad0;
+      --night: #0b1022;
+      --line: #2a3354;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+  .wrap { max-width: 68rem; margin-inline: auto; padding-inline: 1.5rem; }
+
+  header.top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-block: 1.25rem;
+  }
+  .brand { font-family: var(--serif); font-weight: 700; font-size: 1.3rem; text-decoration: none; }
+  nav a { margin-inline-start: 1.5rem; text-decoration: none; color: var(--ink-soft); font-weight: 500; }
+  nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; }
+
+  /* Hero: the name itself, lit by a single flame */
+  .hero { text-align: center; padding-block: 5rem 6rem; }
+  .flame {
+    width: 26px; height: 44px; margin: 0 auto 1.75rem;
+    background: radial-gradient(ellipse at 50% 75%, #fff3c4 0%, var(--flame) 45%, #b9741a 100%);
+    border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+    box-shadow: 0 0 40px 12px rgba(217,164,65,.35);
+    animation: flicker 3.2s ease-in-out infinite;
+    transform-origin: 50% 100%;
+  }
+  @keyframes flicker {
+    0%,100% { transform: scale(1) rotate(0); opacity: 1; }
+    30% { transform: scale(1.04, .97) rotate(-1.5deg); opacity: .94; }
+    65% { transform: scale(.97, 1.05) rotate(1.5deg); opacity: 1; }
+  }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 900;
+    font-size: clamp(3.5rem, 12vw, 8rem);
+    line-height: 1; margin: 0; letter-spacing: -.01em;
+  }
+  .hero h1 small { font-size: .3em; font-weight: 500; color: var(--ink-soft); margin-inline-start: .35em; }
+  .hero p { max-width: 34rem; margin: 1.75rem auto 0; color: var(--ink-soft); font-size: 1.25rem; }
+  .btn {
+    display: inline-block; margin-top: 2rem; padding: .8rem 2rem;
+    background: var(--ink); color: var(--paper); text-decoration: none;
+    font-weight: 700; border-radius: 4px;
+  }
+  .btn:hover { background: var(--night); }
+
+  section { padding-block: 4.5rem; border-top: 1px solid var(--line); }
+  h2 { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0 0 1.5rem; line-height: 1.2; }
+  .about { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; }
+  .about p { margin: 0 0 1rem; max-width: 40rem; }
+
+  .acts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .acts li { border-top: 3px solid var(--flame); padding-top: 1rem; }
+  .acts h3 { font-family: var(--serif); font-size: 1.4rem; margin: 0 0 .5rem; }
+  .acts p { margin: 0; color: var(--ink-soft); }
+
+  .contact { background: var(--night); color: #eef0f6; border-top: 0; }
+  .contact h2 { color: #fff; }
+  .contact dl { display: grid; grid-template-columns: max-content 1fr; gap: .75rem 2rem; margin: 0; }
+  .contact dt { color: var(--flame); font-weight: 700; }
+  .contact dd { margin: 0; }
+  .contact a { text-decoration-color: var(--flame); text-underline-offset: 5px; }
+  .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
+
+  footer { background: var(--night); color: #9aa2c0; text-align: center; padding: 1.5rem; font-size: .95rem; }
+
+  @media (max-width: 760px) {
+    .about, .acts { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero { padding-block: 3rem 4rem; }
+    nav a { margin-inline-start: 1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flame { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">זכרון נתן</a>
+    <nav aria-label="ניווט ראשי">
+      <a href="#about">אודות</a>
+      <a href="#activities">פעילות</a>
+      <a href="#contact">יצירת קשר</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="flame" aria-hidden="true"></div>
+      <h1>זכרון נתן<small>(ע״ר)</small></h1>
+      <!-- עדכנו את המשפט הבא לפי הרצון -->
+      <p>עמותה רשומה בירושלים.</p>
+      <a class="btn" href="#contact">צרו קשר</a>
+    </div>
+  </main>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <h2>אודות העמותה</h2>
+    <div>
+      <!-- החליפו בטקסט האמיתי על העמותה, מטרותיה ומייסדיה -->
+      <p>עמותת זכרון נתן (ע״ר) פועלת מירושלים. כאן יופיע תיאור קצר של העמותה, מטרותיה וייעודה.</p>
+      <p>מספר עמותה: <strong>580643492</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="activities">
+  <div class="wrap">
+    <h2>פעילות העמותה</h2>
+    <!-- החליפו בתחומי הפעילות האמיתיים -->
+    <ul class="acts">
+      <li><h3>תחום פעילות ראשון</h3><p>תיאור קצר של הפעילות.</p></li>
+      <li><h3>תחום פעילות שני</h3><p>תיאור קצר של הפעילות.</p></li>
+      <li><h3>תחום פעילות שלישי</h3><p>תיאור קצר של הפעילות.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>יצירת קשר</h2>
+    <dl>
+      <dt>נייד</dt>
+      <dd><a class="ltr" href="tel:+972506736024">050-6736024</a></dd>
+      <dt>דוא״ל</dt>
+      <dd><a class="ltr" href="mailto:zichronosson@gmail.com">zichronosson@gmail.com</a></dd>
+      <dt>כתובת</dt>
+      <dd>ת.ד. 49806, ירושלים, ישראל</dd>
+      <dt>מס׳ עמותה</dt>
+      <dd>580643492</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>© זכרון נתן (ע״ר) · מס׳ עמותה 580643492</footer>
+
+</body>
+</html>
