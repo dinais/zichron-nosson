@@ -3,194 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>זכרון נתן (ע״ר) | לתרומות ופרטים</title>
-<meta name="description" content="עמותת זכרון נתן (ע״ר), ירושלים. לתרומות ולפרטים נוספים צרו קשר.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230c1a40%22/><text x=%2250%22 y=%2274%22 font-size=%2266%22 text-anchor=%22middle%22 fill=%22%23e2b857%22 font-family=%22serif%22 font-weight=%22bold%22>נ</text></svg>">
+<title>זכרון נתן (ע״ר)</title>
+<meta name="description" content="עמותת זכרון נתן (ע״ר), ירושלים. לימוד חושן משפט לאברכים בוגרי הישיבות המצוינות, קבוצות לימוד קדשים, ועזרה לאברכים ומשפחותיהם.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23101a33%22/><text x=%2250%22 y=%2276%22 font-size=%2272%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-family=%22serif%22 font-weight=%22bold%22>נ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0c1a40; --navy-2: #1a3280; --gold: #e2b857; --gold-dark: #8a6a17;
-    --bg: #f4f6fb; --card: #fff; --ink: #121c3a; --ink-soft: #566083; --line: #dce2f0;
+    --paper: #fbfbf9; --ink: #101a33; --soft: #5b6479; --rule: #d9dbe0; --accent: #8b6a1f;
+    --night: #101a33;
+    --serif: "Frank Ruhl Libre", "David Libre", "Times New Roman", serif;
     --sans: "Heebo", Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #0a1126; --card: #131d3f; --ink: #eef2fb; --ink-soft: #a9b3d1; --line: #243060; --gold-dark: #e2b857; }
+    :root { --paper: #0d1428; --ink: #f1f3f8; --soft: #a3adc8; --rule: #26304e; --accent: #d1ac5a; --night: #080d1d; }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 1.1rem; line-height: 1.7; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 1.15rem; line-height: 1.8; }
   a { color: inherit; }
-  a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-  .wrap { width: min(100% - 2.5rem, 64rem); margin-inline: auto; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .wrap { width: min(100% - 3rem, 60rem); margin-inline: auto; }
   .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
-  svg { display: block; }
 
-  /* ===== Sticky nav with Donate button ===== */
-  .nav { position: sticky; top: 0; z-index: 20; background: rgba(12,26,64,.94); backdrop-filter: blur(8px); color: #fff; }
-  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
-  .logo { font-weight: 900; font-size: 1.3rem; color: var(--gold); text-decoration: none; }
-  .links { display: flex; gap: 1.6rem; margin-inline: auto 1.6rem; }
-  .links a { text-decoration: none; font-weight: 500; color: #cfd7ef; }
-  .links a:hover { color: #fff; }
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: .55rem; padding: .85rem 1.9rem; border-radius: 999px;
-    font-weight: 700; text-decoration: none; border: 2px solid var(--gold); transition: background .2s, color .2s;
-  }
-  .btn svg { width: 1.15em; height: 1.15em; flex: none; }
-  .btn.solid { background: var(--gold); color: var(--navy); }
-  .btn.solid:hover { background: #f2cf80; border-color: #f2cf80; }
-  .btn.ghost { color: var(--gold); }
-  .btn.ghost:hover { background: var(--gold); color: var(--navy); }
-  .nav .btn { padding: .5rem 1.4rem; }
+  /* Top line */
+  .top { display: flex; justify-content: flex-start; align-items: center; padding-block: 1.6rem; border-bottom: 1px solid var(--rule); }
+  .top .mark { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+  .top nav { display: flex; gap: 2rem; font-size: 1rem; }
+  .top nav a { text-decoration: none; color: var(--soft); }
+  .top nav a:hover { color: var(--ink); }
 
-  /* ===== Hero ===== */
-  .hero {
-    color: #fff; text-align: center; padding-block: clamp(4rem, 11vw, 8rem) clamp(5rem, 12vw, 8.5rem);
-    background:
-      radial-gradient(ellipse 60% 70% at 85% 0%, rgba(226,184,87,.20), transparent 70%),
-      radial-gradient(ellipse 70% 80% at 10% 100%, rgba(60,100,210,.40), transparent 70%),
-      var(--navy);
-  }
+  /* Hero */
+  .hero { padding-block: clamp(4rem, 12vw, 9rem) clamp(3.5rem, 9vw, 6.5rem); }
   .hero h1 {
-    margin: 0; font-weight: 900; font-size: clamp(4rem, 16vw, 9.5rem); line-height: 1; letter-spacing: -.02em;
-    animation: rise .9s cubic-bezier(.2,.7,.2,1) both;
+    margin: 0; font-family: var(--serif); font-weight: 900; line-height: .98;
+    font-size: clamp(4.6rem, 20vw, 12.5rem); letter-spacing: -.025em;
   }
-  .reg { font-size: clamp(1.4rem, 4vw, 2rem); color: var(--gold); margin: .6rem 0 0; font-weight: 500; animation: rise .9s .12s cubic-bezier(.2,.7,.2,1) both; }
-  .lead { font-size: clamp(1.25rem, 3.4vw, 1.75rem); margin: 1.8rem auto 0; max-width: 30rem; color: #d6ddf2; animation: rise .9s .24s cubic-bezier(.2,.7,.2,1) both; }
-  .actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 2.2rem; animation: rise .9s .36s cubic-bezier(.2,.7,.2,1) both; }
-  .actions .btn { min-width: 12rem; font-size: 1.1rem; }
-  @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  .hero h1 span { font-size: .22em; font-weight: 500; color: var(--accent); letter-spacing: 0; margin-inline-start: .35em; }
+  .hero p { font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 1.9rem); line-height: 1.55; max-width: 36rem; margin: 2rem 0 0; color: var(--soft); }
+  .hero .go { display: inline-block; margin-top: 2.4rem; font-weight: 500; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: .2rem; }
+  .hero .go:hover { color: var(--accent); }
 
-  /* ===== Trust strip ===== */
-  .trust { margin-top: -2.6rem; position: relative; z-index: 3; }
-  .trust ul {
-    list-style: none; margin: 0; padding: 1.2rem 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-around; gap: .6rem 2rem;
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 22px 44px -26px rgba(12,26,64,.5);
-  }
-  .trust li { display: flex; align-items: center; gap: .6rem; font-weight: 500; }
-  .trust svg { width: 1.3rem; height: 1.3rem; color: var(--gold-dark); flex: none; }
+  /* Activities as ruled rows */
+  .sec { border-top: 1px solid var(--ink); padding-block: 1.4rem 4.5rem; }
+  .label { font-size: .95rem; letter-spacing: .04em; color: var(--accent); font-weight: 500; margin: 0 0 1rem; }
+  .row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 1.5rem; align-items: baseline; padding-block: 2rem; border-bottom: 1px solid var(--rule); }
+  .row:first-of-type { border-top: 1px solid var(--rule); }
+  .row h3 { margin: 0; font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.25; font-weight: 700; }
+  .row p { margin: 0; color: var(--soft); }
 
-  /* ===== Sections ===== */
-  section.block { padding-block: 4.5rem 0; }
-  h2.title { margin: 0 0 .4rem; font-size: clamp(1.9rem, 4.5vw, 2.6rem); line-height: 1.2; font-weight: 900; text-align: center; }
-  .sub { margin: 0 auto 2.4rem; text-align: center; color: var(--ink-soft); max-width: 32rem; }
+  /* Give / contact */
+  .give { background: var(--night); color: #f1f3f8; padding-block: clamp(4rem, 9vw, 6.5rem); }
+  .give h2 { margin: 0; font-family: var(--serif); font-weight: 900; font-size: clamp(2.4rem, 7vw, 4.6rem); line-height: 1.1; }
+  .give .intro { margin: 1rem 0 3rem; color: #b9c2dc; max-width: 32rem; }
+  .ways { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 2rem; border-top: 1px solid rgba(255,255,255,.22); padding-top: 2rem; }
+  .ways small { display: block; color: #d1ac5a; font-size: .95rem; margin-bottom: .3rem; }
+  .ways a { font-family: var(--serif); font-size: clamp(1.15rem, 4.6vw, 1.6rem); font-weight: 500; text-decoration: none; white-space: nowrap; }
+  .ways a:hover { color: #d1ac5a; }
+  .addr { margin: 3rem 0 0; color: #b9c2dc; }
 
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .tile {
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.8rem 1.5rem; text-align: center;
-    text-decoration: none; display: block; transition: border-color .2s, transform .2s;
-  }
-  a.tile:hover { border-color: var(--gold-dark); transform: translateY(-4px); }
-  .ico { width: 3.2rem; height: 3.2rem; margin: 0 auto 1rem; border-radius: 50%; background: var(--navy); color: var(--gold); display: grid; place-items: center; }
-  .ico svg { width: 1.5rem; height: 1.5rem; }
-  .tile h3 { margin: 0 0 .2rem; font-size: 1.25rem; font-weight: 700; }
-  .tile p { margin: 0; color: var(--ink-soft); overflow-wrap: anywhere; }
+  footer { background: var(--night); color: #8e99b9; font-size: .95rem; padding-block: 1.6rem; border-top: 1px solid rgba(255,255,255,.12); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 2rem; }
 
-  .cta {
-    margin-block: 4.5rem 0; text-align: center; color: #fff; padding: clamp(2.5rem, 7vw, 4rem) 1.5rem;
-    background: radial-gradient(ellipse 70% 120% at 50% 0%, var(--navy-2), var(--navy));
-  }
-  .cta h2 { margin: 0 0 .5rem; font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 900; }
-  .cta p { margin: 0 0 1.6rem; color: #d6ddf2; }
-
-  footer { background: #070f26; color: #9eabd3; text-align: center; padding: 1.6rem 1rem 5.5rem; font-size: .95rem; }
-  footer strong { color: var(--gold); font-weight: 500; }
-
-  /* Mobile: sticky call bar */
-  .callbar { display: none; }
   @media (max-width: 760px) {
-    .links { display: none; }
-    .nav .btn { margin-inline-start: auto; }
-    .grid { grid-template-columns: 1fr; }
-    .actions .btn { width: 100%; }
-    .callbar {
-      display: flex; position: fixed; inset: auto 0 0 0; z-index: 30; padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom, 0px));
-      background: rgba(12,26,64,.96); gap: .6rem;
-    }
-    .callbar .btn { flex: 1; padding: .75rem 1rem; }
-  }
-  @media (min-width: 761px) { footer { padding-bottom: 1.6rem; } }
-  @media (prefers-reduced-motion: reduce) {
-    .hero h1, .reg, .lead, .actions { animation: none; }
-    .btn, .tile { transition: none; }
-    html { scroll-behavior: auto; }
+    .top nav a:not(.keep) { display: none; }
+    .row { grid-template-columns: 1fr; gap: .4rem; padding-block: 1.6rem; }
+    .ways { grid-template-columns: 1fr; justify-content: stretch; gap: 1.4rem; }
   }
 </style>
 </head>
 <body>
 
-<nav class="nav" aria-label="ראשי">
-  <div class="wrap">
-    <a class="logo" href="#">זכרון נתן</a>
-    <div class="links">
-      <a href="#give">דרכים לתרום</a>
-      <a href="#contact">יצירת קשר</a>
-    </div>
-    <a class="btn solid" href="#give">לתרומה</a>
+<div class="wrap">
+  <div class="top">
+    <nav aria-label="ראשי">
+      <a href="#activities">פעילות</a>
+      <a class="keep" href="#give">לתרומה</a>
+    </nav>
   </div>
-</nav>
 
-<header class="hero">
-  <div class="wrap">
-    <h1>זכרון נתן</h1>
-    <p class="reg">(ע״ר)</p>
-    <p class="lead">לתרומות ולפרטים נוספים, צרו קשר.</p>
-    <div class="actions">
-      <a class="btn solid" href="#give">לתרומה</a>
-      <a class="btn ghost" href="tel:+972506736024">התקשרו אלינו</a>
-    </div>
-  </div>
-</header>
+  <header class="hero">
+    <h1>זכרון נתן<span>(ע״ר)</span></h1>
+    <p>לימוד חושן משפט וקדשים, ותמיכה באברכים ומשפחותיהם.</p>
+    <a class="go" href="#give">לתרומה ולפרטים נוספים ←</a>
+  </header>
+</div>
 
 <main>
-  <div class="trust">
+  <section class="sec" id="activities">
     <div class="wrap">
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>עמותה רשומה (ע״ר)</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>מס׳ עמותה <span class="ltr">580643492</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>ירושלים</li>
-      </ul>
-    </div>
-  </div>
-
-  <section class="block" id="give">
-    <div class="wrap">
-      <h2 class="title">דרכים לתרום</h2>
-      <p class="sub">בחרו את הדרך הנוחה לכם, ונשמח לשלוח את כל פרטי התרומה.</p>
-      <div class="grid">
-        <a class="tile" href="tel:+972506736024">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
-          <h3>בטלפון</h3><p class="ltr">050-6736024</p>
-        </a>
-        <a class="tile" href="https://wa.me/972506736024" target="_blank" rel="noopener">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.7-5.2A8.5 8.5 0 1 1 21 12z"/></svg></div>
-          <h3>בוואטסאפ</h3><p>שלחו הודעה</p>
-        </a>
-        <a class="tile" href="mailto:zichronosson@gmail.com?subject=תרומה לזכרון נתן">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-          <h3>במייל</h3><p class="ltr">zichronosson@gmail.com</p>
-        </a>
+      <p class="label">פעילות העמותה</p>
+      <div class="row">
+        <h3>לימוד חושן משפט</h3>
+        <p>אברכים בוגרי הישיבות המצוינות בארץ, בלימוד ברמה הגבוהה ביותר.</p>
+      </div>
+      <div class="row">
+        <h3>קבוצות לימוד קדשים</h3>
+        <p>קבוצות שונות ללימוד קדשים, בירושלים ובאחיסמך.</p>
+      </div>
+      <div class="row">
+        <h3>עזרה לאברכים ומשפחותיהם</h3>
+        <p>סיוע ותמיכה לאברכים ולמשפחותיהם.</p>
       </div>
     </div>
   </section>
 
-  <section class="cta" id="contact">
+  <section class="give" id="give">
     <div class="wrap">
-      <h2>נשמח לשמוע מכם</h2>
-      <p>ת.ד. 49806, ירושלים</p>
-      <a class="btn solid" href="tel:+972506736024">התקשרו אלינו</a>
+      <h2>לתרומה ולפרטים</h2>
+      <p class="intro">נשמח לשלוח את כל פרטי התרומה. אפשר לפנות בכל אחת מהדרכים.</p>
+      <div class="ways">
+        <div><small>נייד</small><a class="ltr" href="tel:+972506736024">050-6736024</a></div>
+        <div><small>וואטסאפ</small><a href="https://wa.me/972506736024" target="_blank" rel="noopener">שלחו הודעה</a></div>
+        <div><small>דוא״ל</small><a class="ltr" href="mailto:zichronosson@gmail.com?subject=תרומה לזכרון נתן">zichronosson@gmail.com</a></div>
+      </div>
+      <p class="addr">ת.ד. 49806, ירושלים</p>
     </div>
   </section>
 </main>
 
-<footer>© זכרון נתן (ע״ר) · מס׳ עמותה <strong class="ltr">580643492</strong></footer>
-
-<div class="callbar">
-  <a class="btn solid" href="tel:+972506736024">התקשרו</a>
-  <a class="btn ghost" href="https://wa.me/972506736024" target="_blank" rel="noopener">וואטסאפ</a>
-</div>
+<footer>
+  <div class="wrap">
+    <span>עמותה רשומה (ע״ר), ירושלים</span>
+    <span>מס׳ עמותה <span class="ltr">580643492</span></span>
+  </div>
+</footer>
 
 </body>
 </html>
